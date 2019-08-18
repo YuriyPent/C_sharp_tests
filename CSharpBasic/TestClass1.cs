@@ -8,27 +8,15 @@ namespace CSharpBasic
 {
     class TestClass1
     {
-        private int i = 0;
-        public void SetValue(int value)
+        public void Add()
         {
-            i = value;
-        }
-        public void GetValue()
-        {
-            Console.WriteLine("The value of i is : " + i);
-        }
-        //Members
-        public void TestCase1(string result)
-        {
-            Console.WriteLine("executing TestCase 1 "
-                + result);
+            Console.WriteLine("This is empty Add method");
         }
 
-        public void TestCase2(string result)
+        public void Add(int num1, int num2)
         {
-            Console.WriteLine("executing TestCase 2 "
-                + result);
+            int result = num1 + num2;
+            Console.WriteLine("This is Add method : " + result);
         }
-
     }
 }

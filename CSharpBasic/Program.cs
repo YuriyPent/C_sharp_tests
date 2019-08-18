@@ -13,6 +13,15 @@ namespace CSharpBasic
         static void Main(string[] args)
         {
             TestClass1 class1 = new TestClass1();
+            class1.Add(2, 4);
+            class1.Add();
+            Console.Read();
+        }
+
+
+
+        private static void NewMethod()
+        {
 
             //Implicit convertion
             Int16 salary = Int16.MaxValue;
@@ -28,9 +37,6 @@ namespace CSharpBasic
 
             var loginPage = new LoginPage();
             loginPage.ClickButton();
-
-            //((UserListPage)loginPage).ClickButton();
-            Console.Read();
         }
 
         public class LoginPage
