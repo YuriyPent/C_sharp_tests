@@ -20,12 +20,16 @@ namespace CSharpBasic
             salaryIncrement = 3276745;
             Console.WriteLine("The salaryIncrement is : " + salaryIncrement);
 
-            double incomeTax = 23234.234d;
-            Console.WriteLine("The incomeTax is : " + (int)incomeTax);
+            var incomeTax = 23234.234d;
+            var incomeTax2 = "haha";
 
-            object loginPage = new LoginPage();
+            Console.WriteLine("The incomeTax is : " + incomeTax.GetType().Name);
+            Console.WriteLine("The incomeTax is : " + incomeTax2);
 
-            ((UserListPage)loginPage).ClickButton();
+            var loginPage = new LoginPage();
+            loginPage.ClickButton();
+
+            //((UserListPage)loginPage).ClickButton();
             Console.Read();
         }
 
@@ -33,15 +37,15 @@ namespace CSharpBasic
         {
             public string UserName { get; set; }
 
+            public void ClickButton()
+            {
+            }
         }
 
         public class UserListPage
         {
             public string ListOfUsers { get; set; }
-            public void ClickButton()
-            {
 
-            }
         }
     }
 }
