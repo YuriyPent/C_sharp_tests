@@ -8,49 +8,36 @@ namespace CSharpBasic
 {
     class Program
     {
-        //A label for the class program
-        //Program p = new Program();
         static void Main(string[] args)
         {
-            TestClass1 class1 = new TestClass1();
-            int result = class1.Add(2, 4);
-            Console.WriteLine(result + 10);
-            class1.Add();
-            Console.Read();
-        }
+            string testCaseState = "INCONCLUSIVES";
 
-        private static void NewMethod()
-        {
+            if (testCaseState == "PASSED")
+                Console.WriteLine("The case PASSED");
+            else if (testCaseState == "FAILED")
+                Console.WriteLine("The case FAILED");
+            else if (testCaseState == "INCONCLUSIVE")
+                Console.WriteLine("The case INCONCLUSIVE");
 
-            //Implicit convertion
-            Int16 salary = Int16.MaxValue;
-            int salaryIncrement = salary;
-            salaryIncrement = 3276745;
-            Console.WriteLine("The salaryIncrement is : " + salaryIncrement);
-
-            var incomeTax = 23234.234d;
-            var incomeTax2 = "haha";
-
-            Console.WriteLine("The incomeTax is : " + incomeTax.GetType().Name);
-            Console.WriteLine("The incomeTax is : " + incomeTax2);
-
-            var loginPage = new LoginPage();
-            loginPage.ClickButton();
-        }
-
-        public class LoginPage
-        {
-            public string UserName { get; set; }
-
-            public void ClickButton()
+            switch (testCaseState)
             {
+                case "PASSED":
+                    Console.WriteLine("The case PASSED");
+                    break;
+                case "FAILED":
+                    Console.WriteLine("The case FAILED");
+                    break;
+                case "INCONCLUSIVE":
+                    Console.WriteLine("The case INCONCLUSIVE");
+                    break;
+
+                default:
+                    {
+                        Console.WriteLine("The case is not the one you sent");
+                        break;
+                    }
             }
-        }
-
-        public class UserListPage
-        {
-            public string ListOfUsers { get; set; }
-
+            Console.Read();
         }
     }
 }
