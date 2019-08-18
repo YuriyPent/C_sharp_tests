@@ -13,12 +13,11 @@ namespace CSharpBasic
         static void Main(string[] args)
         {
             TestClass1 class1 = new TestClass1();
-            class1.Add(2, 4);
+            int result = class1.Add(2, 4);
+            Console.WriteLine(result + 10);
             class1.Add();
             Console.Read();
         }
-
-
 
         private static void NewMethod()
         {

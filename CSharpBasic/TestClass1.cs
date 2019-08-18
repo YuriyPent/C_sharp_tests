@@ -13,10 +13,9 @@ namespace CSharpBasic
             Console.WriteLine("This is empty Add method");
         }
 
-        public void Add(int num1, int num2)
+        public int Add(int num1, int num2)
         {
-            int result = num1 + num2;
-            Console.WriteLine("This is Add method : " + result);
+            return num1 + num2;
         }
     }
 }
