@@ -1,4 +1,6 @@
-﻿using System;
+﻿using CSharpBasic.Browsers;
+using CSharpBasic.Selenium;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,9 +22,14 @@ namespace CSharpBasic
         {
         static void Main ( string[] args )
             {
-            Console.WriteLine (GetBrowserName (Browser.Firefox));
+
+            Console.WriteLine (GetBrowserName (Browser.IE));
+            IWebDriver driver = new Chrome ();
+            driver.FindElement ();
             Console.Read ();
+
             }
+
         public static string GetBrowserName ( Browser browser )
             {
             if (browser==Browser.Firefox)
