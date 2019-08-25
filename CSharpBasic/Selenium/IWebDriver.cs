@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace CSharpBasic.Selenium
     {
-    interface IWebDriver
+    public interface IWebDriver
         {
         void FindElement ();
         void SendKeys ( string keys );

@@ -1,4 +1,5 @@
 ﻿using CSharpBasic.Browsers;
+using CSharpBasic.ExtensionMethods;
 using CSharpBasic.Selenium;
 using System;
 using System.Collections;
@@ -26,6 +27,7 @@ namespace CSharpBasic
             Console.WriteLine (GetBrowserName (Browser.IE));
             IWebDriver driver = new Chrome ();
             driver.FindElement ();
+            driver.SendKeysWithSpChar ("executeautomation", "!!!");
             Console.Read ();
 
             }
