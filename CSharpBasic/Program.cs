@@ -10,6 +10,25 @@ namespace CSharpBasic
     {
         static void Main(string[] args)
         {
+            // looping
+            for (int i = 0; i < 10; i++)
+            {
+                Console.WriteLine("Printing number : " + i);
+            }
+
+            bool elementNotVisible = true;
+            int mockNoOfSeconds = 0;
+            while (elementNotVisible)
+            {
+                Console.WriteLine("No of seconds waiting " + mockNoOfSeconds);
+                if (mockNoOfSeconds == 4)
+                {
+                    elementNotVisible = false;
+                    mockNoOfSeconds++;
+                }
+                Console.Read();
+            }
+            //conditions
             string testCaseState = "INCONCLUSIVES";
 
             if (testCaseState == "PASSED")
