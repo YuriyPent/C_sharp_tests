@@ -10,52 +10,16 @@ namespace CSharpBasic
     {
         static void Main(string[] args)
         {
-            // looping
-            for (int i = 0; i < 10; i++)
+            int[] testInts = new int[] { 101, 102, 103, 104, 105 };
+            for (int i = 0; i < testInts.Length; i++)
+                Console.WriteLine("The value of " + i + " is " + testInts[i]);
+
+            string[] testNames = new string[] { "Login", "UserForm", "Selenium", "Hover" };
+            foreach (var testName in testNames)
             {
-                Console.WriteLine("Printing number : " + i);
+                Console.WriteLine(testName);
             }
 
-            bool elementNotVisible = true;
-            int mockNoOfSeconds = 0;
-            while (elementNotVisible)
-            {
-                Console.WriteLine("No of seconds waiting " + mockNoOfSeconds);
-                if (mockNoOfSeconds == 4)
-                {
-                    elementNotVisible = false;
-                    mockNoOfSeconds++;
-                }
-                Console.Read();
-            }
-            //conditions
-            string testCaseState = "INCONCLUSIVES";
-
-            if (testCaseState == "PASSED")
-                Console.WriteLine("The case PASSED");
-            else if (testCaseState == "FAILED")
-                Console.WriteLine("The case FAILED");
-            else if (testCaseState == "INCONCLUSIVE")
-                Console.WriteLine("The case INCONCLUSIVE");
-
-            switch (testCaseState)
-            {
-                case "PASSED":
-                    Console.WriteLine("The case PASSED");
-                    break;
-                case "FAILED":
-                    Console.WriteLine("The case FAILED");
-                    break;
-                case "INCONCLUSIVE":
-                    Console.WriteLine("The case INCONCLUSIVE");
-                    break;
-
-                default:
-                    {
-                        Console.WriteLine("The case is not the one you sent");
-                        break;
-                    }
-            }
             Console.Read();
         }
     }
