@@ -61,21 +61,22 @@ namespace CSharpBasic
             users.Add (new User { UserId=2, Name="Sam", Age=21, Email="sam@sam.com", Phone=5214 });
             users.Add (new User { UserId=3, Name="Jacob", Age=27, Email="jacob@jacob.com", Phone=9524 });
 
-            foreach (var user in users)
-                {
-                Console.WriteLine (
-                    String.Format ("The User {0} with Age {1} has Email {2} and Phone {3}",
-                        user.Name, user.Age, user.Email, user.Phone));
-                }
+            //foreach (var user in users)
+            //    {
+            //    Console.WriteLine (
+            //        String.Format ("The User {0} with Age {1} has Email {2} and Phone {3}",
+            //            user.Name, user.Age, user.Email, user.Phone));
+            //    }
 
-            var userList = from user in users
-                           select user.Name;
+            //var userList = from user in users
+            //               where user.Age==21
+            //               select user;
 
-            var userList1 = users.Select (x => x.Age);
+            var userList = users.Where (x => x.Age==30).Select (x => x);
 
             foreach (var user in userList)
                 {
-                Console.WriteLine (user);
+                Console.WriteLine (user.Name);
                 }
 
             //List<User> users = new List<User> ()
