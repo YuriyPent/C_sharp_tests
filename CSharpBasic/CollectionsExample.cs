@@ -68,15 +68,15 @@ namespace CSharpBasic
             //            user.Name, user.Age, user.Email, user.Phone));
             //    }
 
-            //var userList = from user in users
-            //               where user.Age==21
-            //               select user;
+            var userList = from user in users
+                           where user.Age<=30
+                           select new { FirstName = user.Name, PhoneNumber = user.Phone };
 
-            var userList = users.Where (x => x.Age==30).Select (x => x);
+            //var userList = users.Where (x => x.Age==30).Select (x => x);
 
             foreach (var user in userList)
                 {
-                Console.WriteLine (user.Name);
+                Console.WriteLine ("User {0} has Phone number {1}", user.FirstName, user.PhoneNumber);
                 }
 
             //List<User> users = new List<User> ()
