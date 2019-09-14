@@ -25,9 +25,10 @@ namespace CSharpBasic
             {
 
             Console.WriteLine (GetBrowserName (Browser.IE));
-            IWebDriver driver = new Chrome ();
-            driver.FindElement ();
-            driver.SendKeysWithSpChar ("executeautomation", "!!!");
+            //IWebDriver driver = new Chrome ();
+            //driver.FindElement ();
+            //driver.SendKeysWithSpChar ("executeautomation", "!!!");
+            CollectionsExample.GenericCollectionsWithCustomClass ();
             Console.Read ();
 
             }

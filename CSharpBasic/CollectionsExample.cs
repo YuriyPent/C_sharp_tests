@@ -67,6 +67,17 @@ namespace CSharpBasic
                     String.Format ("The User {0} with Age {1} has Email {2} and Phone {3}",
                         user.Name, user.Age, user.Email, user.Phone));
                 }
+
+            var userList = from user in users
+                           select user.Name;
+
+            var userList1 = users.Select (x => x.Age);
+
+            foreach (var user in userList)
+                {
+                Console.WriteLine (user);
+                }
+
             //List<User> users = new List<User> ()
             //    {
             //    new User
