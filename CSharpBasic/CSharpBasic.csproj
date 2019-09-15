@@ -47,6 +47,7 @@
     <Compile Include="Browsers\IE.cs" />
     <Compile Include="Browsers\Chrome.cs" />
     <Compile Include="CollectionsExample.cs" />
+    <Compile Include="Delegates\DelegateTry.cs" />
     <Compile Include="ExtensionMethods\WebDriverExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

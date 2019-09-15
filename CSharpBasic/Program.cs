@@ -1,4 +1,5 @@
 ﻿using CSharpBasic.Browsers;
+using CSharpBasic.Delegates;
 using CSharpBasic.ExtensionMethods;
 using CSharpBasic.Selenium;
 using System;
@@ -24,11 +25,15 @@ namespace CSharpBasic
         static void Main ( string[] args )
             {
 
-            Console.WriteLine (GetBrowserName (Browser.IE));
+            //Console.WriteLine (GetBrowserName (Browser.IE));
             //IWebDriver driver = new Chrome ();
             //driver.FindElement ();
             //driver.SendKeysWithSpChar ("executeautomation", "!!!");
-            CollectionsExample.GenericCollectionsWithCustomClass ();
+            //CollectionsExample.GenericCollectionsWithCustomClass ();
+
+            //Delegate examples
+            Printer p = DelegateTry.PrintValue_1;
+            p ("executeautomation");
             Console.Read ();
 
             }
