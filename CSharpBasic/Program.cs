@@ -31,8 +31,19 @@ namespace CSharpBasic
             //driver.SendKeysWithSpChar ("executeautomation", "!!!");
             //CollectionsExample.GenericCollectionsWithCustomClass ();
 
-            //Delegate examples
-            Printer p = DelegateTry.PrintValue_1;
+            //Delegate examples C#1.0
+            //Printer p = DelegateTry.PrintValue_1;
+            //p ("executeautomation");
+
+            //Delegate examples C#2.0
+            //Printer p = delegate ( string values )
+            //    {
+            //        Console.WriteLine ($"The value printed inline: {values}");
+            //        };
+            //p ("executeautomation");
+
+            //Delegate examples C#3.0
+            Printer p = ( values ) => { Console.WriteLine ($"The value printed from Lambda expression: {values}"); };
             p ("executeautomation");
             Console.Read ();
 
