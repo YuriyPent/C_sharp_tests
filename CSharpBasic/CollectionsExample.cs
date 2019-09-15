@@ -56,10 +56,36 @@ namespace CSharpBasic
 
         public static void GenericCollectionsWithCustomClass ()
             {
+
             List<User> users = new List<User> ();
-            users.Add (new User { UserId=1, Name="Karthik", Age=30, Email="kk@kk.com", Phone=23121 });
-            users.Add (new User { UserId=2, Name="Sam", Age=21, Email="sam@sam.com", Phone=5214 });
-            users.Add (new User { UserId=3, Name="Jacob", Age=27, Email="jacob@jacob.com", Phone=9524 });
+
+            users.Add (
+                new User
+                    {
+                    UserId=1,
+                    Name="Karthik",
+                    Age=30,
+                    Email="kk@kk.com",
+                    Phone=23121,
+                    Addresses=new List<Address> ()
+                        {
+                        new Address
+                            {
+                            Street="Demostreet_1",
+                            Country="India",
+                            FlatName="Panorama"
+                            },
+                        new Address ()
+                            {
+                            Street="Demostreet_1_1",
+                            Country="Malaysia",
+                            FlatName="Panorama_x"
+                            }
+                        }
+                    }
+                );
+            //users.Add (new User { UserId=2, Name="Sam", Age=21, Email="sam@sam.com", Phone=5214, Addresses=new Address { Street="Demostreet_2", Country="USA", FlatName="Panorama" } });
+            //users.Add (new User { UserId=3, Name="Jacob", Age=27, Email="jacob@jacob.com", Phone=9524, Addresses=new Address { Street="Demostreet_2", Country="Malaysia", FlatName="Panorama" } });
 
             //foreach (var user in users)
             //    {
@@ -69,14 +95,20 @@ namespace CSharpBasic
             //    }
 
             var userList = from user in users
+                           from address in user.Addresses
                            where user.Age<=30
-                           select new { FirstName = user.Name, PhoneNumber = user.Phone };
+                           select new
+                               {
+                               FirstName = user.Name,
+                               PhoneNumber = user.Phone,
+                               Address = address
+                               };
 
-            //var userList = users.Where (x => x.Age==30).Select (x => x);
+            var addresses = users.Where (x => x.Age==30).SelectMany (x => x.Addresses);
 
             foreach (var user in userList)
                 {
-                Console.WriteLine ("User {0} has Phone number {1}", user.FirstName, user.PhoneNumber);
+                Console.WriteLine ("User {0} has Phone number {1} with country {2}", user.FirstName, user.PhoneNumber, user.Address.Country);
                 }
 
             //List<User> users = new List<User> ()
@@ -104,6 +136,14 @@ namespace CSharpBasic
         public int Age { get; set; }
         public string Email { get; set; }
         public Int64 Phone { get; set; }
+        public List<Address> Addresses { get; set; }
+        }
+
+    public class Address
+        {
+        public string FlatName { get; set; }
+        public string Street { get; set; }
+        public string Country { get; set; }
         }
     }
 
