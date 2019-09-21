@@ -52,6 +52,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Selenium\IWebDriver.cs" />
+    <Compile Include="Sharp7\NewFeatures.cs" />
     <Compile Include="TestClass1.cs" />
   </ItemGroup>
   <ItemGroup>
